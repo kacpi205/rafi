@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        
+        "watch": "vite build --watch",
         "build:ssr": "vite build && vite build --ssr",
         "dev": "vite",
         "format": "prettier --write resources/",
@@ -27,6 +27,7 @@
         "@chakra-ui/react": "^3.11.0",
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.0",
+        "@faker-js/faker": "^9.6.0",
         "@headlessui/react": "^2.2.0",
         "@inertiajs/react": "^2.0.0",
         "@mui/material": "^6.4.7",

@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
+{
+    use HasUuids;
+
+    protected $table = 'category';
+
+    public function products()
+    {
+        return $this->belongsToMany('App\Product');
+    }
+
+    function setActiveCategory($category, $output = 'active')
+{
+    return request()->category == $category ? $output : '';
+}
+
+
+}

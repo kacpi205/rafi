@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class Products extends Controller
 {
+
     
     public function create(Request $request): Response{
         
@@ -19,24 +20,12 @@ class Products extends Controller
         ]);
 
         $product->create(
-            $request->validated();
+            $request->validated()
         );
 
         return Redirect::back()->with('success', 'product created.');
 
     }
-
-
-    public function store(Request $request): Response
-    {
-        Auth::user()->account->products()->create(
-            $request->validated()
-        );
-
-        return Redirect::route('products')->with('success', 'Contact created.');
-    }
-
-
 
     public function update(Product $product, Request $request): Response
     {

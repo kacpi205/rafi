@@ -7,7 +7,7 @@ import TextInput from '@/components/Form/TextInput';
 import SelectInput from '@/components/Form/SelectInput';
 import FileInput from '@/components/Form/FileInput';
 import TrashedMessage from '@/components/Messages/TrashedMessage';
-import { Product } from '@/types';
+import { Product } from '@/types/Product';
 import FieldGroup from '@/components/Form/FieldGroup';
 import { Description } from '@radix-ui/react-dialog';
 
