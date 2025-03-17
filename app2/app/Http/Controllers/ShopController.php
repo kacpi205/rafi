@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -29,36 +31,36 @@ class ShopController extends Controller
                 $products = $products->paginate($pagination);
             }
 
-            return view('shop')->with([
+            return view('products')->with([
                 'products' => $products,
                 'categories' => $categories,
                 'categoryName' => $categoryName,
             ]);
         }
 
-        public function show($slug)
-        {
-            $product = Product::where('slug', $slug)->firstOrFail();
-        
-            return view('products')->with([
-                'product' => $product,
-                'stockLevel' => $stockLevel,
-                'mightAlsoLike' => $mightAlsoLike,
-            ]);
-        }
-    
+        // public function show($slug)
+        // {
+        //     $product = Product::where('slug', $slug)->firstOrFail();
+
+        //     return view('products')->with([
+        //         'product' => $product,
+        //         'stockLevel' => $stockLevel,
+        //         'mightAlsoLike' => $mightAlsoLike,
+        //     ]);
+        // }
+
         public function search(Request $request)
         {
             $request->validate([
                 'query' => 'required|min:3',
             ]);
-    
+
             $query = $request->input('query');
-    
+
             $products = Product::search($query)->paginate(10);
-    
+
             // return view('search-results')->with('products', $products);
             //TODO
         }
-    
+
 }

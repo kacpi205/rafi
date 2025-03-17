@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 
-    use HasUuids;
 
     protected $fillable = ['quantity'];
 
@@ -18,7 +17,7 @@ class Product extends Model
             'products.description' => 3,
             'products.image' => 2,
             'products.discount' => 2,
-            
+
         ],
     ];
 

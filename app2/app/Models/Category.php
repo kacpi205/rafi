@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasUuids;
+    // use HasUuids;
 
-    protected $table = 'category';
+    protected $table = 'categories';
 
     public function products()
     {
-        return $this->belongsToMany('App\Product');
+        return $this->belongsToMany(Product::class);
     }
 
     function setActiveCategory($category, $output = 'active')

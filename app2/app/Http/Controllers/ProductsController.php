@@ -2,21 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
+use App\Models\Product;
+use Inertia\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
-class Products extends Controller
+class ProductsController extends Controller
+
 {
 
-    
+    public function index() {
+
+        return Inertia::render('products',
+            ['categories' => Category::all(),
+             'products' => Product::all()
+            ]);
+    }
+
+
     public function create(Request $request): Response{
-        
+
         $request->validate([
             'title' =>'required|string|max:255',
             'price' =>'required|numeric|min:0',
             'discount' => 'numeric|min:0',
             'description' =>'required|string|max:255',
             'image' =>'required|image|mimes:jpeg,png,jpg|max:2048',
-            
+
         ]);
 
         $product->create(
