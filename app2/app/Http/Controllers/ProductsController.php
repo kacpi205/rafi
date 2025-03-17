@@ -17,7 +17,8 @@ class ProductsController extends Controller
 
         return Inertia::render('products',
             ['categories' => Category::all(),
-             'products' => Product::all()
+             'products' => Product::all(),
+             'iconCopy' => '<CopyOutlined/>'
             ]);
     }
 

@@ -52,5 +52,14 @@ export type PageProps<
     error: string | null;
   };
   ziggy: Config & { location: string };
-  notification?: string ;
+//   notification?: string ;
 };
+
+export type ProductsProps = {
+    iconCopy: string | React.RefAttributes<HTMLSpanElement>;
+};
+
+export type TestProps = {
+    notification: string;
+};
+
